@@ -5,6 +5,7 @@ import * as MenuVer from "./MenuVer.js"
 import chalk from "./node_modules/chalk/source/index.js"
 const Scannf = prompt();
 let op = -1;
+let hayTreas = false;
 export let tareas = [];
 let aux;
 export function pausa() {
@@ -20,10 +21,20 @@ while (op != `0`) {
             console.log(chalk.blueBright(`Hasta la proxima Olivia...`));
             break;
         case `1`:
-            MenuVer.MenuVer();
+            if (hayTreas) {
+                MenuVer.MenuVer();
+            }
+            else {
+                console.log(chalk.redBright(`No hay tareas aún...`));
+            }
             break;
         case `2`:
-            MenuVer.BuscarPor(tareas, `1`, 0);
+            if (hayTreas) {
+                MenuVer.BuscarPor(tareas, `1`, 0);
+            }
+            else {
+                console.log(chalk.redBright(`No hay tareas aún...`));
+            }
             break;
         default:
             console.log(chalk.redBright(`Opción invalida...`));
@@ -38,6 +49,7 @@ while (op != `0`) {
                 tareas.push(aux);
                 console.log(chalk.greenBright(`¡Datos guardados!`));
                 MenuVer.VerDetalles(tareas.length - 1, tareas);
+                hayTreas = true;
             }
             break;
     }

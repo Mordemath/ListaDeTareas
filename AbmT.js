@@ -1,7 +1,7 @@
 import * as controles from "./controles.js";
 import prompt from "prompt-sync";
-import { pausa } from "./index.js"
-import chalk from "./node_modules/chalk/source/index.js"
+import { pausa } from "./index.js";
+import chalk from "./node_modules/chalk/source/index.js";
 const Scannf = prompt();
 export function AgregarTarea(f, tareaM) {// Con esta función cargamos una nueva tarea cuando el parametro f(Función) está en 0, y cuando no, la función actua como editor de tarea. el parametro tareaM solo sirve cuando editamos una tarea.
     console.clear();
