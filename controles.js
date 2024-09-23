@@ -17,7 +17,7 @@ export function CargarTitulo(titulo, f) {
             pausa();
             console.clear();
         }
-    } while (titulo == " " || titulo == "  " || titulo == "   " || titulo.lenght > 100);
+    } while (titulo == " " || titulo == "  " || titulo == "   " || titulo.length > 100);
     if (titulo == "") {
         return `-1`;
     }
@@ -124,7 +124,6 @@ export function CargarVencimiento(vencimiento, f) {
     let dia;
     let diasPorMes;
     let bisiesto;
-    (año % 4 === 0 && (año % 100 !== 0 || año % 400 === 0))
     console.clear();
     //Pedimos el año**************************************************************************
     do {
